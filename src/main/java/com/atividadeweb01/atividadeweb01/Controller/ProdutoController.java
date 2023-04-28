@@ -16,20 +16,20 @@ public class ProdutoController {
 
     List<Produto> produtos = new ArrayList<>();
 
-    @GetMapping("cadastro")
+    @GetMapping("home")
     public String home() {
-        return "cadastrar";
+        return "home";
     }
 
-    @PostMapping
-    public String list(Produto produto) {
+    @PostMapping("/home")
+    public String lista(Produto produto) {
         int id = produtos.size() + 1;
         produtos.add(new Produto(id, produto.getNomeProduto(), produto.getValor(), produto.getPeso(),
                 produto.getQtdEstoque()));
         return "redirect:/list";
     }
 
-    @GetMapping("list")
+    @GetMapping("/list")
     public ModelAndView lista() {
         ModelAndView mv = new ModelAndView("lista");
         mv.addObject("Produtos", produtos);

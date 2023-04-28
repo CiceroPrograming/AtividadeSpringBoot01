@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Lista de Produtos</title>
 </head>
 <body>
     <a href="/home">Cadastro de Produtos</a>
@@ -21,11 +21,11 @@
         </thead>
         <tbody>
             <tr data-th-each="produto: ${Produtos}">
-                <td data-th-reach="${produto.id}"></td>
-                <td data-th-reach="${produto.nomeProduto}"></td>
-                <td data-th-reach="${produto.valor}"></td>
-                <td data-th-reach="${produto.peso}"></td>
-                <td data-th-reach="${produto.qtdProduto}"></td>
+                <td data-th-text="${produto.id}"></td>
+                <td data-th-text="${produto.nomeProduto}"></td>
+                <td data-th-text="${produto.valor}"></td>
+                <td data-th-text="${produto.peso}"></td>
+                <td data-th-text="${produto.qtdEstoque}"></td>
                 <td><a th:href="@{'/excluir/'+${produto.id}}">Excluir</td>
             </tr>
         </tbody>
