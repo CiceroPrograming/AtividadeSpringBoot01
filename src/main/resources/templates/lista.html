@@ -17,6 +17,7 @@
                 <th>Peso</th>
                 <th>Quantidade em Estoque</th>
                 <th>Excluir</th>
+                <th>Editar</th>
             </tr>
         </thead>
         <tbody>
@@ -27,6 +28,7 @@
                 <td data-th-text="${produto.peso}"></td>
                 <td data-th-text="${produto.qtdEstoque}"></td>
                 <td><a th:href="@{'/excluir/'+${produto.id}}">Excluir</td>
+                <td><a th:href="@{'/home/editar/'+${produto.id}}">Editar</td>
             </tr>
         </tbody>
     </table>

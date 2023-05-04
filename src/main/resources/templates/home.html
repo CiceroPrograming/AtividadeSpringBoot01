@@ -9,23 +9,28 @@
 </head>
 <body>
     <a href="/list">Lista de Produtos</a>
-    <form method="post" action="home">
+    <form method="post" action="/home">
+
+        <div th:if="${produtoAntigo}">
+            <input type="text" name="id" th:value="${produtoAntigo?.id}">
+        </div>
+        
         <div id="formulario">
 
             <label>Nome do Produto</label>
-            <input type="text" name="nomeProduto">
+            <input type="text" name="nomeProduto" th:value="${produtoAntigo?.nomeProduto}">
             <p></p>
 
             <label>Valor</label>
-            <input type="text" name="valor">
+            <input type="text" name="valor" th:value="${produtoAntigo?.valor}">
             <p></p>
 
             <label>Peso</label>
-            <input type="text" name="peso">
+            <input type="text" name="peso" th:value="${produtoAntigo?.peso}">
             <p></p>
 
             <label>Quantidade em Estoque</label>
-            <input type="number" name="qtdEstoque">
+            <input type="number" name="qtdEstoque" th:value="${produtoAntigo?.qtdEstoque}">
             <p></p>
 
             <button type="submit">Cadastrar</button>
